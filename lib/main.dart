@@ -2,14 +2,15 @@
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:graphe_firebase_notification/constants/colors.dart';
 import 'package:graphe_firebase_notification/firebase_options.dart';
 import 'package:graphe_firebase_notification/view/login.dart';
 
-void main() async{
-    WidgetsFlutterBinding.ensureInitialized();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -22,6 +23,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return GetMaterialApp(
       title: 'Firebase Notifications',
       theme: ThemeData(
@@ -47,7 +52,7 @@ class MyApp extends StatelessWidget {
             color: kLabelColor,
           ),
           headlineSmall: GoogleFonts.openSans(
-            fontSize: 14,
+            fontSize: 16,
             fontWeight: FontWeight.bold,
             color: kTextColor,
           ),
