@@ -1,15 +1,13 @@
-// ignore_for_file: non_constant_identifier_names, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
-Widget ColumnDivider() {
-  return SizedBox(
+Widget columnDivider() {
+  return const SizedBox(
     height: 16,
   );
 }
 
-Widget RowDivider() {
-  return SizedBox(
+Widget rowDivider() {
+  return const SizedBox(
     width: 16,
   );
 }
