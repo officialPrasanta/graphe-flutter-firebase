@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "271115715042",
+    "project_id": "graphe-firebase-notification",
+    "storage_bucket": "graphe-firebase-notification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271115715042:android:2031c3765b7206af7e79bb",
+        "android_client_info": {
+          "package_name": "com.example.graphe_firebase_notification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "271115715042-ke7e50p48eoccq7fuc961liqun4v513i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBiEeFXquJBgo-0u7uqoJeGzKiaxtUaRw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "271115715042-ke7e50p48eoccq7fuc961liqun4v513i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
