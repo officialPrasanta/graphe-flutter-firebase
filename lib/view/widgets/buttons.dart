@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:graphe_firebase_notification/constants/colors.dart';
+import 'package:graphe_firebase_notification/view/widgets/dividers.dart';
 
 Widget primaryButton(
     {required BuildContext context,
@@ -14,18 +16,31 @@ Widget primaryButton(
         borderRadius: BorderRadiusDirectional.circular(borderRadius ?? 5),
         color: kPrimaryButtonColor,
       ),
-      padding: const EdgeInsets.symmetric(vertical: 16),
+      padding: const EdgeInsets.only(top: 12, bottom: 12),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           prefixImagePath != null
-              ? ClipOval(
-                  child: Image.asset(prefixImagePath),
+              ? Row(
+                  children: [
+                    ClipOval(
+                      child: Image.asset(
+                        prefixImagePath,
+                        width: 32,
+                        height: 32,
+                      ),
+                    ),
+                    rowDivider()
+                  ],
                 )
               : const SizedBox(),
           Text(
             labelText,
-            style: Theme.of(context).textTheme.headlineSmall,
+            style: GoogleFonts.openSans(
+              fontSize: 16,
+              color: kButtonTextColor,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ],
       ),
