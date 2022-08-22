@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:graphe_firebase_notification/constants/measurement.dart';
 import 'package:graphe_firebase_notification/view/widgets/buttons.dart';
-import 'package:graphe_firebase_notification/view/widgets/custom_text_field.dart';
-import 'package:graphe_firebase_notification/view/widgets/dividers.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -9,22 +9,42 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
+      body: Container(
+        margin: const EdgeInsets.only(
+          left: kMargin,
+          right: kMargin,
+        ),
+        child: Stack(
+          fit: StackFit.expand,
           children: [
-            CustomTextField(
-                labelText: 'Enter Your Email',
-                keyboardType: TextInputType.emailAddress),
-            TextFieldDivider(),
-            CustomTextField(
-              labelText: 'Enter Your Password',
-              ishideText: true,
+            Align(
+              alignment: Alignment.topLeft,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: Get.height * 0.2,
+                  ),
+                  Text(
+                    'Hello There,',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  Text(
+                    'Welcome back',
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                ],
+              ),
             ),
-            TextFieldDivider(),
-            primaryButton(
-              context: context,
-              labelText: 'Login',
-            ),
+            Align(
+              alignment: Alignment.center,
+              child: primaryButton(
+                prefixImagePath: "assets/google.png",
+                context: context,
+                labelText: 'Login / Signup With Google',
+              ),
+            )
           ],
         ),
       ),
