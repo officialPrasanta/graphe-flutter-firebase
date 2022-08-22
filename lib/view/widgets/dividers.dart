@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-Widget columnDivider() {
-  return const SizedBox(
-    height: 16,
+Widget columnDivider({double? height}) {
+  return SizedBox(
+    height: height ?? 16,
   );
 }
 
-Widget rowDivider() {
-  return const SizedBox(
-    width: 16,
+Widget rowDivider({double? width}) {
+  return SizedBox(
+    width: width ?? 16,
   );
 }
