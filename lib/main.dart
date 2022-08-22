@@ -3,6 +3,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:graphe_firebase_notification/constants/colors.dart';
 import 'package:graphe_firebase_notification/firebase_options.dart';
 import 'package:graphe_firebase_notification/view/login.dart';
 
@@ -22,6 +24,35 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Firebase Notifications',
+      theme: ThemeData(
+        scaffoldBackgroundColor: kScaffolBackgroundColor,
+        textTheme: TextTheme(
+          titleLarge: GoogleFonts.openSans(
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+            height: 1.2,
+            color: kTextColor,
+          ),
+          bodyMedium: GoogleFonts.openSans(
+            fontSize: 14,
+            height: 1.2,
+            color: kTextColor,
+          ),
+          bodySmall: GoogleFonts.openSans(
+            fontSize: 12,
+            color: kTextColor,
+          ),
+          labelSmall: GoogleFonts.openSans(
+            fontSize: 14,
+            color: kLabelColor,
+          ),
+          headlineSmall: GoogleFonts.openSans(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+            color: kTextColor,
+          ),
+        ),
+      ),
       home: Login(),
     );
   }
