@@ -24,15 +24,17 @@ class CustomTextField extends StatelessWidget {
       // onChanged: loginBloc.changeName,
       keyboardType: keyboardType,
       decoration: InputDecoration(
+        contentPadding: const EdgeInsets.all(10),
+        isDense: true,
         label: Text(labelText ?? 'label'),
         filled: false,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: kTextFieldBorderColor),
+          borderSide: BorderSide(color: kBorderColor),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: kTextFieldBorderColor),
+          borderSide: BorderSide(color: kBorderColor),
         ),
       ),
     );
