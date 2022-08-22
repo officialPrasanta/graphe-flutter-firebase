@@ -2,7 +2,13 @@
 
 import 'package:flutter/material.dart';
 
-Widget TextFieldDivider() {
+Widget ColumnDivider() {
+  return SizedBox(
+    height: 16,
+  );
+}
+
+Widget RowDivider() {
   return SizedBox(
     height: 16,
   );

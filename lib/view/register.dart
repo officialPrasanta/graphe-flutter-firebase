@@ -15,13 +15,13 @@ class RegisterUser extends StatelessWidget {
             CustomTextField(
                 labelText: 'Enter Your Name',
                 keyboardType: TextInputType.emailAddress),
-            TextFieldDivider(),
+            ColumnDivider(),
             CustomTextField(
               labelText: 'Enter Your Phone Number',
               ishideText: true,
               keyboardType: TextInputType.phone,
             ),
-            TextFieldDivider(),
+            ColumnDivider(),
             primaryButton(
               context: context,
               labelText: 'Submit',
