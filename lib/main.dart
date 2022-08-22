@@ -33,10 +33,16 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: kScaffolBackgroundColor,
         textTheme: TextTheme(
           titleLarge: GoogleFonts.openSans(
-            fontSize: 28,
+            fontSize: 32,
             fontWeight: FontWeight.bold,
             height: 1.2,
             color: kTextColor,
+          ),
+          titleMedium: GoogleFonts.openSans(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            height: 1.2,
+            color: kLabelColor,
           ),
           bodyMedium: GoogleFonts.openSans(
             fontSize: 14,
