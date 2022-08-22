@@ -10,6 +10,6 @@ Widget ColumnDivider() {
 
 Widget RowDivider() {
   return SizedBox(
-    height: 16,
+    width: 16,
   );
 }
