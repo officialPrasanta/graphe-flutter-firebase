@@ -24,97 +24,56 @@ class RegisterUser extends StatelessWidget {
             right: kMargin,
             bottom: kMargin,
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: Get.height * 0.2,
-              ),
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    'Register User,',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  columnDivider(height: Get.height * 0.1)
-                ],
-              ),
-              Expanded(
-                child: Column(
-                  // mainAxisSize: MainAxisSize.min,
-                  children: [
-                    CustomTextField(
-                        labelText: 'Enter Your Name',
-                        keyboardType: TextInputType.emailAddress),
-                    columnDivider(),
-                    CustomTextField(
-                      labelText: 'Enter Your Phone Number',
-                      ishideText: true,
-                      keyboardType: TextInputType.phone,
-                    ),
-                    columnDivider(),
-                    Obx(() {
-                      return dobButton(
-                          selectedDOB: ac.selectedDate.value,
-                          context: context,
-                          onTap: () => ac.openDatePicker(context));
-                    }),
-                    columnDivider(),
-                    Obx(() {
-                      return dropDown(
-                          genderList: ac.genderList,
-                          context: context,
-                          currentGender: ac.currentGender.value,
-                          onChange: ac.onGenderChange);
-                    })
-                  ],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: Get.height * 0.2,
                 ),
-              ),
-              primaryButton(
-                context: context,
-                labelText: 'Submit',
-                onTap: () {},
-              ),
-            ],
+                Text(
+                  'Register User,',
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                columnDivider(height: Get.height * 0.1),
+                CustomTextField(
+                    labelText: 'Enter Your Name',
+                    controller: ac.nameController,
+                    keyboardType: TextInputType.emailAddress),
+                columnDivider(),
+                CustomTextField(
+                  controller: ac.phoneController,
+                  labelText: 'Enter Your Phone Number',
+                  ishideText: true,
+                  keyboardType: TextInputType.phone,
+                ),
+                columnDivider(),
+                Obx(() {
+                  return dobButton(
+                      selectedDOB: ac.selectedDate.value,
+                      context: context,
+                      onTap: () => ac.openDatePicker(context));
+                }),
+                columnDivider(),
+                Obx(() {
+                  return dropDown(
+                    itemList: ac.genderList,
+                    context: context,
+                    currentItem: ac.currentGender.value,
+                    onChange: ac.onGenderChange,
+                  );
+                }),
+                columnDivider(height: Get.height * 0.25),
+                primaryButton(
+                  context: context,
+                  labelText: 'Submit',
+                  onTap: ac.submit,
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-    );
-  }
-
-  Container dropDown(
-      {required List<String> genderList,
-      required BuildContext context,
-      required String currentGender,
-      void Function(String?)? onChange}) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        vertical: kTextFieldPadding - 2,
-        horizontal: 16,
-      ),
-      decoration: BoxDecoration(
-          border: Border.all(
-            color: kBorderColor,
-          ),
-          borderRadius: BorderRadius.circular(10)),
-      child: DropdownButton<String>(
-        value: currentGender,
-        items: genderList
-            .map(
-              (String gender) => DropdownMenuItem<String>(
-                value: gender,
-                child: Text(gender),
-              ),
-            )
-            .toList(),
-        onChanged: onChange,
-        iconSize: 0.0,
-        underline: const SizedBox(),
-        isExpanded: true,
-        isDense: true,
-        style: Theme.of(context).textTheme.labelSmall,
       ),
     );
   }
