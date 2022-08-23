@@ -7,6 +7,13 @@ class AuthController extends GetxController {
   DateTime now = DateTime.now();
   Rx<String> selectedDate = ''.obs;
   DateTime? pickedDate;
+
+  List<String> genderList = ['Male', 'Female', 'Others'];
+  Rx<String> currentGender = 'Male'.obs;
+
+  //methods
+
+  //date picker
   void openDatePicker(BuildContext context) async {
     pickedDate = await showDatePicker(
         context: context,
@@ -20,5 +27,10 @@ class AuthController extends GetxController {
         Fluttertoast.showToast(msg: 'You must be 18 years old');
       }
     }
+  }
+
+  //Gender dropdown
+  void onGenderChange(String? newGender) {
+    currentGender.value = newGender!;
   }
 }
