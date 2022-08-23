@@ -66,8 +66,9 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: RegisterUser(),
       initialBinding: InstanceBinding(),
+      getPages: router
+      initialRoute: 'SPLASH',
     );
   }
 }
