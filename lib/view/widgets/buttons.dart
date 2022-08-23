@@ -53,6 +53,7 @@ Widget primaryButton(
 
 Widget dobButton({
   required BuildContext context,
+  required selectedDOB,
   void Function()? onTap,
 }) {
   return InkWell(
@@ -71,7 +72,7 @@ Widget dobButton({
       child: Row(
         children: [
           Text(
-            'Enter Your DOB',
+            selectedDOB ==''?'Enter Your DOB': selectedDOB,
             style: Theme.of(context).textTheme.labelSmall,
           ),
         ],
