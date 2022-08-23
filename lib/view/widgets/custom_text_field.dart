@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:graphe_firebase_notification/constants/colors.dart';
+import 'package:graphe_firebase_notification/constants/measurement.dart';
 
 class CustomTextField extends StatelessWidget {
   CustomTextField({
@@ -24,7 +25,11 @@ class CustomTextField extends StatelessWidget {
       // onChanged: loginBloc.changeName,
       keyboardType: keyboardType,
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.all(10),
+        labelStyle: Theme.of(context).textTheme.labelSmall,
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: kTextFieldPadding,
+          horizontal: 16,
+        ),
         isDense: true,
         label: Text(labelText ?? 'label'),
         filled: false,
