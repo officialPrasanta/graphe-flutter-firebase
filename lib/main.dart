@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:graphe_firebase_notification/config/instance_binding.dart';
 import 'package:graphe_firebase_notification/constants/colors.dart';
 import 'package:graphe_firebase_notification/firebase_options.dart';
 import 'package:graphe_firebase_notification/view/login.dart';
+import 'package:graphe_firebase_notification/view/register.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -64,7 +66,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: Login(),
+      home: RegisterUser(),
+      initialBinding: InstanceBinding(),
     );
   }
 }
