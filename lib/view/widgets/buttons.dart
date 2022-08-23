@@ -80,3 +80,38 @@ Widget dobButton({
     ),
   );
 }
+
+Widget dropDown(
+    {required List<String> itemList,
+    required BuildContext context,
+    required String currentItem,
+    void Function(String?)? onChange}) {
+  return Container(
+    padding: const EdgeInsets.symmetric(
+      vertical: kTextFieldPadding - 2,
+      horizontal: 16,
+    ),
+    decoration: BoxDecoration(
+        border: Border.all(
+          color: kBorderColor,
+        ),
+        borderRadius: BorderRadius.circular(10)),
+    child: DropdownButton<String>(
+      value: currentItem,
+      items: itemList
+          .map(
+            (String item) => DropdownMenuItem<String>(
+              value: item,
+              child: Text(item),
+            ),
+          )
+          .toList(),
+      onChanged: onChange,
+      iconSize: 0.0,
+      underline: const SizedBox(),
+      isExpanded: true,
+      isDense: true,
+      style: Theme.of(context).textTheme.labelSmall,
+    ),
+  );
+}
