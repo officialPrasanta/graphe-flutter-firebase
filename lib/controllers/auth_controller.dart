@@ -11,6 +11,9 @@ class AuthController extends GetxController {
   List<String> genderList = ['Male', 'Female', 'Others'];
   Rx<String> currentGender = 'Male'.obs;
 
+  TextEditingController nameController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+
   //methods
 
   //date picker
@@ -33,4 +36,14 @@ class AuthController extends GetxController {
   void onGenderChange(String? newGender) {
     currentGender.value = newGender!;
   }
+
+  //submit user data - register user
+  void submit() async {
+    String name = nameController.text;
+    String phone = phoneController.text;
+    print("${name}, ${phone} ${selectedDate.value} ${currentGender.value}");
+  }
+
+  //clear the fields
+  void clear() {}
 }
