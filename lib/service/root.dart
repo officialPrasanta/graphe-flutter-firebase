@@ -18,14 +18,14 @@ class Root extends StatelessWidget {
         ? const Login()
         : FutureBuilder<UserData?>(
             future: ac.fetchUserData(),
-            builder: (BuildContext context, AsyncSnapshot snapshot) {
+            builder: (BuildContext context, AsyncSnapshot<UserData?> snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
                 //dynamic routing
                 if (snapshot.hasError) {
                   return const Login();
                 } else {
                   ac.userData.value = snapshot.data!;
-                  if (ac.userData.value.fullName!.isEmpty) {
+                  if (ac.userData.value.fullName == null) {
                     return const RegisterUser();
                   }else{
                     return const Home();
