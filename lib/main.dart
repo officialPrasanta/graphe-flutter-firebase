@@ -46,6 +46,12 @@ class MyApp extends StatelessWidget {
             height: 1.2,
             color: kLabelColor,
           ),
+          titleSmall: GoogleFonts.openSans(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            height: 1.2,
+            color: kOnPrimaryTextColor,
+          ),
           bodyMedium: GoogleFonts.openSans(
             fontSize: 14,
             height: 1.2,
