@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graphe_firebase_notification/constants/measurement.dart';
+import 'package:graphe_firebase_notification/controllers/auth_controller.dart';
 import 'package:graphe_firebase_notification/view/widgets/buttons.dart';
 
 class Login extends StatelessWidget {
@@ -8,6 +9,7 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AuthController ac = Get.find<AuthController>();
     return Scaffold(
       body: Container(
         margin: const EdgeInsets.only(
@@ -43,6 +45,7 @@ class Login extends StatelessWidget {
                 prefixImagePath: "assets/google.png",
                 context: context,
                 labelText: 'Login / Signup With Google',
+                onTap: ac.loginSignUp
               ),
             )
           ],

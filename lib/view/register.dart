@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:graphe_firebase_notification/constants/colors.dart';
 import 'package:graphe_firebase_notification/constants/measurement.dart';
 import 'package:graphe_firebase_notification/controllers/auth_controller.dart';
 import 'package:graphe_firebase_notification/view/widgets/buttons.dart';
@@ -68,7 +67,7 @@ class RegisterUser extends StatelessWidget {
                 primaryButton(
                   context: context,
                   labelText: 'Submit',
-                  onTap: ac.submit,
+                  onTap: ac.updateUser,
                 ),
               ],
             ),
