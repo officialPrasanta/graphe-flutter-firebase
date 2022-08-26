@@ -44,13 +44,12 @@ class RegisterUser extends StatelessWidget {
                 CustomTextField(
                   controller: ac.phoneController,
                   labelText: 'Enter Your Phone Number',
-                  ishideText: true,
                   keyboardType: TextInputType.phone,
                 ),
                 columnDivider(),
                 Obx(() {
                   return dobButton(
-                      selectedDOB: ac.selectedDate.value,
+                      selectedDOB: ac.selectedDOB.value,
                       context: context,
                       onTap: () => ac.openDatePicker(context));
                 }),
