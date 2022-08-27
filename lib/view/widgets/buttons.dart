@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:graphe_firebase_notification/constants/colors.dart';
 import 'package:graphe_firebase_notification/constants/measurement.dart';
+import 'package:graphe_firebase_notification/theme/material_colors.dart';
 import 'package:graphe_firebase_notification/view/widgets/dividers.dart';
 
 Widget primaryButton(
@@ -14,8 +15,8 @@ Widget primaryButton(
     onTap: onTap,
     child: Ink(
       decoration: BoxDecoration(
-        borderRadius: BorderRadiusDirectional.circular(borderRadius ?? 5),
-        color: kPrimaryButtonColor,
+        borderRadius: BorderRadiusDirectional.circular(borderRadius ?? 0),
+        color: kPrimaryMaterialColor,
       ),
       padding: const EdgeInsets.symmetric(
         vertical: kTextFieldPadding - 2,
@@ -72,7 +73,7 @@ Widget dobButton({
       child: Row(
         children: [
           Text(
-            selectedDOB ==''?'Enter Your DOB': selectedDOB,
+            selectedDOB == '' ? 'Enter Your DOB' : selectedDOB,
             style: Theme.of(context).textTheme.labelSmall,
           ),
         ],
