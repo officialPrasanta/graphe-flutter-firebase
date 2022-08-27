@@ -66,6 +66,7 @@ class RegisterUser extends StatelessWidget {
                 primaryButton(
                   context: context,
                   labelText: 'Submit',
+                  borderRadius: 6,
                   onTap: ac.updateUser,
                 ),
               ],

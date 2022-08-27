@@ -42,11 +42,11 @@ class Login extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: primaryButton(
-                prefixImagePath: "assets/google.png",
-                context: context,
-                labelText: 'Login / Signup With Google',
-                onTap: ac.loginSignUp
-              ),
+                  prefixImagePath: "assets/google.png",
+                  context: context,
+                  labelText: 'Login / Signup With Google',
+                  borderRadius: 6,
+                  onTap: ac.loginSignUp),
             )
           ],
         ),
